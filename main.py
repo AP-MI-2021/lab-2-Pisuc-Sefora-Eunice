@@ -30,7 +30,7 @@ def is_superprim(n):
     return True
 def test_is_superprime():
     n=int(input("3) n ="))
-    if is_superprim():
+    if is_superprim(n):
         print("Superprim")
     else:
         print(" Nu e superprim")
