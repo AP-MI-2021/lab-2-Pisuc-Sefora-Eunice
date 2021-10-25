@@ -48,6 +48,14 @@ def get_cmmmc(lst):
         nr = nr+1
     return nr
 
+def meniu():
+    print("1.Citire date")
+    print("2.Determina daca un nr dat este palindrome")
+    print("3.Determina daca un nr este superprim")
+    print("4.Sa se calculeze cmmmc al n numere")
+    print("5.Iesire")
+
+
 def test_is_palindrome():
     assert(is_palindrome(12321)==12321)
 def test_is_superprim():
