@@ -1,3 +1,10 @@
+def citire_date():
+    n = int(input("Introduceti numarul de elemente din lista"))
+    lst = []
+
+    for i in range(n):
+        lst.append(int(input("Dati numarul: ")))
+    return lst
 
 
 def is_palindrome(n):
@@ -6,14 +13,11 @@ def is_palindrome(n):
     while nr != 0:
         c = nr % 10
         rez = rez * 10 + c
-        nr == nr // 10
+        nr = nr // 10
     return n == rez
 def test_is_palindrome():
-    n=int(input("12321) n = "))
-    if is_palindrome(n):
-        print("Palindrome")
-    else:
-        print("Nu e palindrome")
+    assert (is_palindrome(12321)==True)
+    assert (is_palindrome(12522)==False)
 
 
  #'Problema 6'
@@ -30,11 +34,8 @@ def is_superprim(n):
 
 
 def test_is_superprime():
-    n = int(input("3) n ="))
-    if is_superprim(n):
-        print("Superprim")
-    else:
-        print(" Nu e superprim")
+    assert (is_superprim(23)==True)
+    assert (is_superprim(36)==False)
 
 def get_cmmmc(lst):
     nr = max(lst)
@@ -47,6 +48,9 @@ def get_cmmmc(lst):
             break
         nr = nr+1
     return nr
+def test_get_cmmmc():
+    assert (get_cmmmc([1,3,7])==21)
+
 
 def meniu():
     print("1.Citire date")
@@ -55,22 +59,40 @@ def meniu():
     print("4.Sa se calculeze cmmmc al n numere")
     print("5.Iesire")
 
+def run():
+    lst = []
+    while True == True:
+        meniu()
+        opt = input("Introdu optiunea:")
+        if opt == "1":
+            lst = citire_date()
+        if opt == "2":
+            n = int(input("Introduceti numarul"))
+            if is_palindrome(n):
+                print("Is palindrome")
+            else:
+                print("Is not palindrome")
+        if opt == "3":
+            n = int(input("Introduceti numarul"))
+            if is_superprim(n):
+                print("Is superprim")
+            else:
+                print("Is not superprim")
+        if opt == "4":
+            print("Multiplul este: ", get_cmmmc(lst))
+        if opt == "5":
+            break
 
-def test_is_palindrome():
-    assert(is_palindrome(12321)==12321)
-def test_is_superprim():
-    assert(is_superprim(237)==237)
-def test_get_cmmmc():
-    assert(get_cmmmc([2,10,7])==70)
 
 
 
 def main():
-    print(is_palindrome())
-    print(is_superprim())
-    print(get_cmmmc([]))
-    if __name__ == '__main__':
-        main()
+    test_is_palindrome()
+    test_is_superprime()
+    test_get_cmmmc()
+    run()
+
+main()
 
 
 
